@@ -15,9 +15,9 @@ schema_view = get_schema_view(
         title="Cost hunt API",
         default_version='v1',
         description="Cost hunt API dev hunt 2024",
-        terms_of_service="https://www.yourapp.com/terms/",
-        contact=openapi.Contact(email="contact@yourapp.com"),
-        license=openapi.License(name="Your License"),
+        terms_of_service="https://www.costhunt.com/terms/",
+        contact=openapi.Contact(email="rafranckyam04@gmail.com"),
+        license=openapi.License(name="Cost hunt license"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -25,8 +25,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('render.urls')),
+    path('costhunt/api/', include('render.urls')),
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
