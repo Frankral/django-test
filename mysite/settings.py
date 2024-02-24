@@ -36,8 +36,6 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 # Application definition
 
-ALLOWED_HOSTS = ["192.168.88.132","127.0.0.1"]
-
 INSTALLED_APPS = [
     'render.apps.RenderConfig',
     'django.contrib.admin',
@@ -92,7 +90,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # TODO update this row to your proper connection string
-        default='postgresql://postgres:123456789@localhost:5432/mysite',
+        default='postgresql://postgres:postgres@localhost:5432/mysite',
         conn_max_age=600
     )
 }
