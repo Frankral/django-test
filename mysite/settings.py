@@ -34,8 +34,6 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 # Application definition
 
-ALLOWED_HOSTS = ["192.168.88.132","127.0.0.1"]
-
 INSTALLED_APPS = [
     'render.apps.RenderConfig',
     'django.contrib.admin',
